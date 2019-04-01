@@ -4,16 +4,16 @@
 function titleNames(numberOfFiles)
 switch (numberOfFiles)
  case 1
-   title(' Motherboard, Shielded, Terminated LISN+');
+   title(' ');
  case 2
-   title(' Motherboard, Shielded, Terminated LISN+, cleaned table');
+   title(' ');
  case 3
-   title('Motherboard I2T5, Shielded, Terminated LISN+');
+   title(' ');
  case 4
-   title('Open leads with power on');
+   title(' ');
  case 5
-   title('LISN+, 525kHz, 3mV, Calibration');
+   title(' ');
  case 6
-   title('LISN+, 787kHz, 3mV, Calibration');
+   title(' ');
 endswitch
 endfunction
