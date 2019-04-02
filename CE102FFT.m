@@ -1,5 +1,4 @@
 
-
 % The FFT calculation based on results obtained from the oscilloscope
 % (Rigol DS4024). The correction factor is taken into account as specified in 
 % MIL-STD-461F Appendix A on page 209 for a 50uH LISN.
@@ -60,13 +59,8 @@ fVecEndIndex = floor(fVecLength/2); % Sequence number around 31.25MHz
 fVecEnd = fVec(1, fVecEndIndex); % 31.25 MHz
 SMC = SignalMagnitudeCorrection(fVecStartIndex:fVecEndIndex, 1);
 [signalPeak signalPeakIndex] = max(SMC); % Location of peak
-signalPeakFreq = fVec(1, fVecStartIndex+signalPeakIndex);
+signalPeakFreq = fVec(1, fVecStartIndex+signalPeakIndex); 
 
-##%Signal in time domain
-##figure(numberOfFiles);
-##plot(amplitude, sequence);
-##titleNames(numberOfFiles);
-##grid on;
 endfunction
 
 

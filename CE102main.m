@@ -21,9 +21,7 @@ Fs = 125*10^6;
 
 %% INPUT: 
 % Measured data files
-data =['analyse\Motherboard\Newfile1.csv';
-'analyse\Motherboard\Newfile2.csv';
-'analyse\Motherboard\I2T5\Newfile1.csv';]
+data =[' ';]
 
 % FFT as many times as there are files in 'data'
 A = rows(data);
@@ -34,9 +32,9 @@ A = rows(data);
 saveFile = 1;
 
 % SAVE AS. The saved title includes also a date and iteration sequence number
-fileTitle = 'CE102_Motherboard_';
+fileTitle = ' ';
 % SAVE LOCATION. Needs to be an already existing folder
-filePath = 'Figures\Motherboard';
+filePath = ' ';
 
 for numberOfFiles = 1:A
 % Fast Fourier Transform of measured data
