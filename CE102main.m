@@ -1,6 +1,6 @@
 %
 % Purpose:    Data analysis with Fast Fourier Tranform (FFT) for EMC pre-compliance 
-%             testing based on MIL-STD-461F CE102
+%             testing based on MIL-STD-461G CE102
 %
 % Equipment:  Oscilloscope Rigol DS4024
 %             LISN 50uH
@@ -12,6 +12,8 @@
 % TODO: 
 %    - Indicate, if the measured value goes above the limit line. 
 %      Not relevant for calibration.
+%    - Export the results as a pdf report
+%
 
 clear all
 close all
