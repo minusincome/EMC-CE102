@@ -1,7 +1,6 @@
 
 % The FFT calculation based on results obtained from the oscilloscope
-% (Rigol DS4024). The correction factor is taken into account as specified in 
-% MIL-STD-461F Appendix A on page 209 for a 50uH LISN.
+% (Rigol DS4024). 
 
 function [fVec, SignalMagnitudeCorrection, signalPeak, signalPeakFreq, signalPeakIndex] = CE102FFT(Fs, numberOfFiles, data)
 
@@ -9,8 +8,8 @@ function [fVec, SignalMagnitudeCorrection, signalPeak, signalPeakFreq, signalPea
 M = csvread(data(numberOfFiles, 1:end));
 
 % Amplitude [V] and Sequence
-amplitude = M(3:end,1);
-sequence = M(3:end,2);
+amplitude = M(3:end,2);
+sequence = M(3:end,1);
 
 %Set zero pad depth (Radix 2);
 zeroPadDepth = 0;
@@ -25,7 +24,7 @@ nfft = length(amplitude);
 
 % Fast Fourier Transform with padding of zeros so that length(Signal) is
 % equal to nfft
-Signal = fft(sequence, nfft);
+Signal = fft(amplitude, nfft);
 
 % Takes only one side
 Signal = Signal(1:nfft/2 + 1);
@@ -45,7 +44,7 @@ CF = (((1+(5.6*10^(-9)).*fVec.^2).^0.5)./(fVec.*7.48*10^(-5)));
 CFt = CF.';
 SignalMagnitudeCorrection = 20*(SignalMagnitude.*CFt);
 
-%SignalMagnitudeCorrection20 = SignalMagnitude*20*CFt;
+
 
 % Maximum peak value between 10kHz - 30MHz
 fVecLength = columns(fVec);
